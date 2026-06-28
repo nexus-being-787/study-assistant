@@ -39,6 +39,14 @@ Generate detailed explanations, summaries, quizzes, flashcards, and beautiful st
 - ⚡ CLI-first architecture
 
 ---
+<p align="center">
+  <img src="https://img.shields.io/badge/Local%20AI-00C853?style=for-the-badge&logo=openai&logoColor=white" alt="Local AI" />
+  <img src="https://img.shields.io/badge/RAG-FF6F00?style=for-the-badge" alt="RAG" />
+  <img src="https://img.shields.io/badge/Vector%20Database-7B3FE4?style=for-the-badge" alt="Vector Database" />
+  <img src="https://img.shields.io/badge/Embeddings-1976D2?style=for-the-badge" alt="Embeddings" />
+  <img src="https://img.shields.io/badge/Offline%20LLM-455A64?style=for-the-badge" alt="Offline LLM" />
+  <img src="https://img.shields.io/badge/CLI-121011?style=for-the-badge&logo=gnubash&logoColor=white" alt="CLI" />
+</p>
 
 # 🏗 Architecture
 
