@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2e3347;
+      --accent: #7c6af7;
+      --accent-dim: #3d3570;
+      --text: #e2e4ef;
+      --text-muted: #8b8fa8;
+      --green: #4ade80;
+      --yellow: #fbbf24;
+      --red: #f87171;
+      --code-bg: #12141e;
+      --radius: 10px;
+      --font-mono: "JetBrains Mono", "Fira Code", monospace;
+      --font-body: "Inter", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    header .badge {
+      display: inline-block;
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.6rem;
+    }
+
+    header h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    header .meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* ── Mode tag ── */
+    .mode-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .mode-tag span { color: var(--accent); font-weight: 600; }
+
+    /* ── Content card ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card h2::before {
+      content: "";
+      display: inline-block;
+      width: 3px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* ── Answer body ── */
+    .answer {
+      font-size: 0.97rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: var(--text);
+    }
+
+    /* ── Flashcards ── */
+    .flashcard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    .flashcard {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .flashcard .front {
+      font-weight: 700;
+      color: var(--yellow);
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .flashcard .back {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Sources ── */
+    .sources {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.4rem;
+    }
+
+    .sources h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .sources ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sources li {
+      font-size: 0.82rem;
+      color: var(--green);
+      font-family: var(--font-mono);
+      padding: 0.15rem 0;
+    }
+
+    .sources li::before { content: "→  "; color: var(--text-muted); }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">Study Assistant</div>
+    <h1>{{ title }}</h1>
+    <p class="meta">Generated {{ generated_at }} &nbsp;·&nbsp; Model: {{ model_name }}</p>
+  </header>
+
+  <div class="mode-tag">Mode: <span>{{ mode }}</span></div>
+
+  {% if mode == "flashcard" and flashcards %}
+  <!-- Flashcard grid layout -->
+  <div class="card">
+    <h2>Flashcards</h2>
+    <div class="flashcard-grid">
+      {% for card in flashcards %}
+      <div class="flashcard">
+        <div class="front">{{ card.front }}</div>
+        <div class="back">{{ card.back }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <!-- Default answer card -->
+  <div class="card">
+    <h2>{{ section_label }}</h2>
+    <div class="answer">{{ answer }}</div>
+  </div>
+  {% endif %}
+
+  {% if sources %}
+  <div class="sources">
+    <h3>Sources</h3>
+    <ul>
+      {% for src in sources %}
+      <li>{{ src }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <footer>
+    study-assistant &nbsp;·&nbsp; local AI &nbsp;·&nbsp; offline-first
+  </footer>
+
+</body>
+</html>

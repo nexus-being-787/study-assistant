@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "study-assistant"
+version = "0.1.0"
+description = "CLI-first AI study assistant with RAG, local LLM, and HTML rendering"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.3.0",
+    "python-dotenv>=1.0.0",
+    "llama-cpp-python>=0.2.77",
+    "chromadb>=0.5.3",
+    "langchain>=0.2.6",
+    "langchain-community>=0.2.6",
+    "langchain-chroma>=0.1.2",
+    "sentence-transformers>=3.0.1",
+    "pypdf>=4.2.0",
+    "playwright>=1.44.0",
+    "typer>=0.12.3",
+    "rich>=13.7.1",
+    "jinja2>=3.1.4",
+    "torch>=2.3.0",
+]
+
+[project.scripts]
+study = "study_assistant.cli.main:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/study_assistant"]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu" }
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[dependency-groups]
+dev = ["ruff>=0.4.0"]

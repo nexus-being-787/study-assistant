@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment variables
+.env
+
+# Models
+models/
+*.gguf
+
+# Vector database
+data/chroma/
+
+# Generated outputs
+output/
+*.pdf
+*.png
+*.html
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
