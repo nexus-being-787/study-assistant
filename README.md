@@ -1,13 +1,5 @@
 <div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/llama.cpp-4B5563?style=for-the-badge&logo=meta&logoColor=white" alt="llama.cpp" />
-  <img src="https://img.shields.io/badge/ChromaDB-7B3FE4?style=for-the-badge" alt="ChromaDB" />
-  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=chainlink&logoColor=white" alt="LangChain" />
-  <img src="https://img.shields.io/badge/Jinja2-B41717?style=for-the-badge&logo=jinja&logoColor=white" alt="Jinja2" />
-  <img src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white" alt="Playwright" />
-</p>
 
 # 📚 Study Assistant
 
@@ -21,6 +13,16 @@ Generate detailed explanations, summaries, quizzes, flashcards, and beautiful st
 ![License](https://img.shields.io/badge/Status-Active-success)
 
 </div>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/llama.cpp-4B5563?style=for-the-badge&logo=meta&logoColor=white" alt="llama.cpp" />
+  <img src="https://img.shields.io/badge/ChromaDB-7B3FE4?style=for-the-badge" alt="ChromaDB" />
+  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=chainlink&logoColor=white" alt="LangChain" />
+  <img src="https://img.shields.io/badge/Jinja2-B41717?style=for-the-badge&logo=jinja&logoColor=white" alt="Jinja2" />
+  <img src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white" alt="Playwright" />
+</p>
+
 
 ---
 
@@ -38,7 +40,6 @@ Generate detailed explanations, summaries, quizzes, flashcards, and beautiful st
 - 📄 Export PDF using Playwright
 - ⚡ CLI-first architecture
 
----
 <p align="center">
   <img src="https://img.shields.io/badge/Local%20AI-00C853?style=for-the-badge&logo=openai&logoColor=white" alt="Local AI" />
   <img src="https://img.shields.io/badge/RAG-FF6F00?style=for-the-badge" alt="RAG" />
@@ -47,6 +48,9 @@ Generate detailed explanations, summaries, quizzes, flashcards, and beautiful st
   <img src="https://img.shields.io/badge/Offline%20LLM-455A64?style=for-the-badge" alt="Offline LLM" />
   <img src="https://img.shields.io/badge/CLI-121011?style=for-the-badge&logo=gnubash&logoColor=white" alt="CLI" />
 </p>
+
+
+---
 
 # 🏗 Architecture
 
