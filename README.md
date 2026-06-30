@@ -1,6 +1,6 @@
 <div align="center">
 
-
+   
 # 📚 Study Assistant
 
 ### A Local AI-Powered Study Assistant built with **llama.cpp**, **ChromaDB**, and **RAG**
